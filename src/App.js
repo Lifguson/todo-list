@@ -1,11 +1,16 @@
-import Home from './Home';
+import TodoList from "./TodoList";
+import Header from "./Header";
 
 function App() {
+
   return (
     <div className="App">
-      <div className="content">
-        <Home />
-      </div>
+      {/* Header (title) */}
+      <Header />
+
+      {/* List + add item function */}
+      <TodoList />
+
     </div>
   );
 }

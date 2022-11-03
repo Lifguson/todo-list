@@ -1,17 +1,14 @@
-*{
+/* *{
   margin: 0;
   background-color: #222831;
 }
 
-.home {
-  color: white;
-  margin-top: 30px;
-}
-
-.content {
+.title {
   text-align: center;
   justify-content: center;
   justify-items: center;
+  color: white;
+  margin-top: 30px;
 }
 
 .create input {
@@ -32,4 +29,4 @@
 
 .todo-list:hover {
   color: #00ADB5
-}
+} */

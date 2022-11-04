@@ -5,11 +5,14 @@ function App() {
 
   return (
     <div className="App">
-      {/* Header (title) */}
+      <div className="header">
       <Header />
+      </div>
 
-      {/* List + add item function */}
+      <div className="content">
+      {/* List + add and delete functions */}
       <TodoList />
+      </div>
 
     </div>
   );

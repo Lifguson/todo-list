@@ -18,7 +18,7 @@ const TodoList = () => {
             value: newItem
         }
 
-        setItems(oldList => [...oldList, item]);
+        setItems(oldList => [item, ...oldList]);
         setNewItem("");
     } 
 

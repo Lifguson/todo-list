@@ -2,18 +2,16 @@ import TodoList from "./TodoList";
 import Header from "./Header";
 
 function App() {
-
   return (
     <div className="App">
       <div className="header">
-      <Header />
+        <Header />
       </div>
 
       <div className="content">
-      {/* List + add and delete functions */}
-      <TodoList />
+        {/* List + add and delete functions */}
+        <TodoList />
       </div>
-
     </div>
   );
 }

@@ -1,57 +1,66 @@
 import { useState } from "react";
 
 const TodoList = () => {
+  const [newItem, setNewItem] = useState("");
+  const [items, setItems] = useState([]);
 
-    const [newItem, setNewItem] = useState("");
-    const [items, setItems] = useState([]);
-
-    // function to add items to list
-    const addItem = () => {
-        
-        if (!newItem) {
-            alert("Enter an item");
-            return;
-        }
-
-        const item = {
-            id: Math.floor(Math.random() * 1000),
-            value: newItem
-        }
-
-        setItems(oldList => [item, ...oldList]);
-        setNewItem("");
-    } 
-
-    // function to delete items from list
-    const deleteItem = (id) => {
-        const newArray = items.filter(item => item.id !== id);
-        setItems(newArray);
+  // function to add items to list
+  const addItem = () => {
+    if (!newItem) {
+      alert("Enter an item");
+      return;
     }
 
-    return (
+    const item = {
+      id: Math.floor(Math.random() * 1000),
+      value: newItem,
+    };
 
-        <div className="todo-list">
-            <input
-                type="text"
-                required
-                value={newItem}
-                placeholder="What do you need to do?"
-                onChange={(e) => setNewItem(e.target.value)}
-            />
+    setItems((oldList) => [item, ...oldList]);
+    setNewItem("");
+  };
 
-            <button className="add-button" onClick={() => addItem()}>Add</button>
+  // function to delete items from list
+  const deleteItem = (id) => {
+    const newArray = items.filter((item) => item.id !== id);
+    setItems(newArray);
+  };
 
-            <ul>
-                {items.map(item => {
-                    return(
-                        <p key={item.id}>{item.value} <button className="delete-button" onClick={() => deleteItem(item.id)}>Delete</button></p>
-                    )
-                })}
-            </ul>
-        </div>
+  return (
+    <div className="todo-list">
+      <div className="input">
+        <input
+          type="text"
+          required
+          value={newItem}
+          placeholder="What do you need to do?"
+          onChange={(e) => setNewItem(e.target.value)}
+        />
 
-    )
+        <button className="add-button" onClick={() => addItem()}>
+          Add
+        </button>
+      </div>
 
-}
+      <div className="list">
+        <ul>
+          {items.map((item) => {
+            return (
+              <li key={item.id}>
+                {item.value}{" "}
+                <button
+                  className="delete-button"
+                  onClick={() => deleteItem(item.id)}
+                >
+                  Delete
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 export default TodoList;

@@ -8,34 +8,12 @@
   color: white;
 }
 
-
-
-
-
 .content {
   text-align: center;
   overflow: hidden;
   justify-items: center;
   align-items: center;
 }
-
-
-/* .todo-list ul {
-  justify-content: center;
-  align-items: center;
-}
-
-.todo-list li {
-  position: relative;
-  background-color: white;
-  border-radius: 10px;
-  margin-top: 20px;
-  align-items: center;
-  display:flex;
-  flex-direction: row;
-  width: 25%;
-  list-style: none;
-} */
 
 .todo-list {
   display: flex;
@@ -45,20 +23,12 @@
   justify-items: center;
 }
 
-/* I don't think the below CSS is necessary, it doesn't seem to make a difference */
-/* .input {
-  display: flex;
-  width: 100%;
-  background-color: black;
-  flex-direction: row;
-  justify-content: center;
-} */
-
 .input input {
   height: 25px;
   border-style: none;
   border-radius: 8px;
   background-color: white;
+  outline: white;
 }
 
 .add-button {

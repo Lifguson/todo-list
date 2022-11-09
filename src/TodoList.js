@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const TodoList = () => {
   const [newItem, setNewItem] = useState("");
@@ -39,22 +39,18 @@ const TodoList = () => {
           onChange={(e) => setNewItem(e.target.value)}
         />
 
-        <button className="add-button" onClick={() => addItem()}>
-          Add
-        </button>
+        <FontAwesomeIcon icon={faPlus} className="add-icon" onClick={() => addItem()} />
       </div>
 
       <div className="list">
-        <ul>
           {items.map((item) => {
             return (
               <li key={item.id}>
                 {item.value}{" "}
-                <FontAwesomeIcon icon={faCircleXmark}  className="delete-icon" onClick={() => deleteItem(item.id)} />
+                <FontAwesomeIcon icon={faXmark}  className="delete-icon" onClick={() => deleteItem(item.id)} />
               </li>
             );
           })}
-        </ul>
       </div>
     </div>
   );

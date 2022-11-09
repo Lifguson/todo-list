@@ -80,9 +80,14 @@
   height: 25px;
   display: flex;
   align-items: center;
-  border-bottom: solid 1px white;
+  border: solid 1px white;
   justify-content: space-between;
-  
+  padding: 5px;
+}
+
+.list li:hover {
+  opacity: 70%;
+  transition-duration: .2s;
 }
 
 .add-icon {

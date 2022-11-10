@@ -72,12 +72,18 @@ const TodoList = () => {
         <form onSubmit={addItem}>
         <input
           type="text"
-          required
           value={newItem}
           placeholder="What needs to be done?"
           onChange={(e) => setNewItem(e.target.value)}
         />
-        
+        <p
+          style={{
+            display: !error ? "none" : "",
+            color: "red"
+          }}
+        >
+          Please add a task
+          </p>
         <FontAwesomeIcon icon={faPlus} className="add-icon" onClick={() => addItem()} />
         </form>
       </div>

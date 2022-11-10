@@ -98,3 +98,13 @@
   transform: translateY(2px);
   transition-duration: .4s;
 }
+
+.edit input{
+  color: white;
+  background-color:black;
+}
+
+.edit button {
+  color: white;
+  border-color: white;
+}

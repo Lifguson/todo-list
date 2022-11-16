@@ -52,7 +52,7 @@
 
 .list {
   color: white;
-  margin-top: 40px;
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   width: 50vh;
@@ -61,7 +61,6 @@
 
 .list li {
   margin-top: 15px;
-  margin-bottom: 15px;
   height: 25px;
   display: flex;
   flex-direction: row;

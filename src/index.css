@@ -91,10 +91,11 @@
   width: 66px;
   padding: 0 10px;
   text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  margin-left: 10px;
 }
 
 .add-button:hover {
-  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 10px;
+  box-shadow: rgba(80, 63, 205, 0.5) 1px 1px 20px;
   transition-duration: .2s;
 }
 
@@ -115,6 +116,7 @@
   width: 66px;
   padding: 0 10px;
   text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  margin-left: 10px;
 }
 
 .delete-button:hover {
@@ -143,21 +145,21 @@
   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
 } */
 
-/* .delete-icon {
-  height: 25px;
-  border-radius: 100px;
+.delete-icon {
+  /* height: 25px; */
+  /* border-radius: 100px; */
   padding: 4px;
 }
 
 .delete-icon:hover {
-  color: red;
+  color: #673FD7;
   transition-duration: .2s;
 }
 
 .delete-icon:active{
   transform: translateY(2px);
   transition-duration: .4s;
-} */
+}
 
 /* .edit input{
   color: white;

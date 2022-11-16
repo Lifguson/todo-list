@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faXmark, faPlus, faTrash, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const TodoList = () => {
   const [newItem, setNewItem] = useState("");
@@ -94,9 +94,10 @@ const TodoList = () => {
           {items.map((item) => {
             return (
               <div className="task">
-              <li key={item.id}> {item.value} <button className="delete-button" onClick={() => deleteItem(item.id)}>Delete</button>
-               
-                {/* <FontAwesomeIcon icon={faXmark}  className="delete-icon" onClick={() => deleteItem(item.id)} /> */}
+              <li key={item.id}> {item.value} 
+
+              {/* <button className="delete-button" onClick={() => deleteItem(item.id)}>Delete</button> */}
+                <FontAwesomeIcon icon={faTrashCan}  className="delete-icon" onClick={() => deleteItem(item.id)} />
               </li>
           
           {/* {showEdit === item.id ? (

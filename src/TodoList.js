@@ -47,24 +47,24 @@ const TodoList = () => {
   };
 
   // for editing items in the list
-  const editItem = (id, newText) => {
-    if (!newText) {
-      return handleError();
-    };
+  // const editItem = (id, newText) => {
+  //   if (!newText) {
+  //     return handleError();
+  //   };
 
-    const currentItem = items.filter((item) => item.id === id);
+  //   const currentItem = items.filter((item) => item.id === id);
 
-    const newItem = {
-      id: currentItem.id,
-      value: newText,
-    };
+  //   const newItem = {
+  //     id: currentItem.id,
+  //     value: newText,
+  //   };
     
-    deleteItem(id);
+  //   deleteItem(id);
 
-    setItems((oldList) => [newItem, ...oldList]);
-    setUpdatedText("");
-    setShowEdit();
-  }
+  //   setItems((oldList) => [newItem, ...oldList]);
+  //   setUpdatedText("");
+  //   setShowEdit();
+  // }
 
   return (
     <div className="todo-list">
@@ -76,6 +76,8 @@ const TodoList = () => {
           placeholder="What needs to be done?"
           onChange={(e) => setNewItem(e.target.value)}
         />
+
+        <button className="add-button" onClick={() => addItem()}>Add</button>
         <p
           style={{
             display: !error ? "none" : "",
@@ -84,20 +86,20 @@ const TodoList = () => {
         >
           Please add a task
           </p>
-        <FontAwesomeIcon icon={faPlus} className="add-icon" onClick={() => addItem()} />
+        {/* <FontAwesomeIcon icon={faPlus} className="add-icon" onClick={() => addItem()} /> */}
         </form>
       </div>
 
       <div className="list">
           {items.map((item) => {
             return (
-              <div>
-              <li key={item.id} onClick={() => setShowEdit(item.id)}>
-                {item.value}
-                <FontAwesomeIcon icon={faXmark}  className="delete-icon" onClick={() => deleteItem(item.id)} />
+              <div className="task">
+              <li key={item.id}> {item.value} <button className="delete-button" onClick={() => deleteItem(item.id)}>Delete</button>
+               
+                {/* <FontAwesomeIcon icon={faXmark}  className="delete-icon" onClick={() => deleteItem(item.id)} /> */}
               </li>
           
-          {showEdit === item.id ? (
+          {/* {showEdit === item.id ? (
             <div className="edit">
               <form onSubmit={addItem}>
               <input
@@ -110,7 +112,7 @@ const TodoList = () => {
               </button>
               </form>
             </div>
-          ) : null}
+          ) : null} */}
           </div>
             );
           })}

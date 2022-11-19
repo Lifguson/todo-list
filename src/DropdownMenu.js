@@ -1,22 +1,31 @@
-const PriorityMenu = () => {
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
 
-const [priority, setPriority] = useState();
+const DropdownMenu = () => {
 
-return (
+    const [open, setOpen] = useState(false);
 
+    const handleOpen = () => {
+        setOpen(!open);
+    }
+
+
+
+  return (
+    
     <div className="dropdown-container">
-        <div className="dropdown-input">
-            <Dropdown placeHolder="Select priority level" />
-            <div className="dropdown-selected-value">
-                <p>Red !!!</p>
-                <p>Yellow !!</p>
-                <p>Green !</p>
-                <p>Grey</p>
-            </div>
-        </div>
+        <button onClick={handleOpen}><FontAwesomeIcon icon={faTag} className="dropdown-icon" /></button>
+        {open ? (
+            <ul className="dropdown-menu">
+                <li className="dropdown-item">High priority</li>
+                <li className="dropdown-item">Medium priority</li>
+                <li className="dropdown-item">Low priority</li>
+            </ul>
+        ) : null}
+     
     </div>
+  );
+};
 
-
-
-)
-}
+export default DropdownMenu;

@@ -169,3 +169,23 @@
   color: white;
   border-color: white;
 } */
+
+
+.dropdown {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  list-style-type: none;
+
+}
+
+menu > li {
+  margin: 0;
+  background-color: white;
+}
+
+.dropdown-icon {
+  color: white;
+}

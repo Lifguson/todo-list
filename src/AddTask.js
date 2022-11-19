@@ -16,7 +16,7 @@ const AddTask = ({ tasks, setTasks }) => {
       value: text,
     };
 
-    setTasks((oldList) => [tasks, ...oldList]);
+    setTasks((tasks) => [task, ...tasks]);
     setText("");
   };
 

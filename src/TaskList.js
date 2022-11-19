@@ -32,8 +32,6 @@ const TaskList = ({ tasks, setTasks }) => {
   //   setShowEdit();
   // }
 
-  console.log(tasks)
-
   return (
     <div className="task-list">
       {tasks.map((task) => {

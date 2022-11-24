@@ -3,24 +3,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faEdit, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
 
-const TaskList = ({ tasks, setTasks }) => {
+const TaskList = ({ tasks, setTasks, completed }) => {
   const [complete, setComplete] = useState(false);
 
   const handleDelete = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  const handleComplete = () => {
-    setComplete(!complete);
+  const handleComplete = (id) => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, completed: true };
+        } else {
+          return task;
+        }
+      })
+    );
   };
   
   return (
     <div className="task-list">
       {tasks.map((task) => {
         return (
-          <div className="task">
+          <div className="task" style={{ backgroundColor: completed ? "green" : "black" }}>
             <li key={task.id}>
-              <div className={complete ? "completed-task" : ""}>{task.value}</div>
+              {task.value}
               {/* <DropdownMenu /> */}
               <div className="task-buttons">
                 <FontAwesomeIcon
@@ -41,20 +49,17 @@ const TaskList = ({ tasks, setTasks }) => {
               </div>
             </li>
 
-            {/* {showEdit === item.id ? (
-            <div className="edit">
-              <form onSubmit={addItem}>
-              <input
-                type="text"
-                value={updatedText}
-                onChange={(e) => setUpdatedText(e.target.value)}
-              />
-              <button onClick={() => editItem(item.id, updatedText)}>
-                Update
-              </button>
-              </form>
-            </div>
-          ) : null} */}
+          {/* <Task 
+            task={task}
+            tasks={tasks}
+            key={task.id}
+            text={task.value}
+            setTasks={setTasks}
+            completed={task.completed}
+            handleComplete={handleComplete}
+            handleDelete={handleDelete}
+          /> */}
+            
           </div>
         );
       })}

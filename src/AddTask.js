@@ -9,16 +9,17 @@ const AddTask = ({ tasks, setTasks }) => {
 
     if (!text) {
       return handleError();
-    }
+    } else {
 
     const task = {
       id: Math.floor(Math.random() * 1000),
       value: text,
+      complete: false
     };
 
-    setTasks((tasks) => [task, ...tasks]);
+    setTasks([task, ...tasks]);
     setText("");
-  };
+  }};
 
   const handleError = () => {
     if (!text) {

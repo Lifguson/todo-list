@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faEdit, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
 
 const TaskList = ({ tasks, setTasks }) => {
@@ -38,14 +38,23 @@ const TaskList = ({ tasks, setTasks }) => {
         return (
           <div className="task">
             <li key={task.id}>
-              {" "}
               {task.value}
-              <DropdownMenu />
-              <FontAwesomeIcon
-                icon={faTrashCan}
-                className="delete-icon"
-                onClick={() => handleDelete(task.id)}
-              />
+              {/* <DropdownMenu /> */}
+              <div className="task-buttons">
+                <FontAwesomeIcon
+                  icon={faEdit}
+                  className="edit-button" 
+                />
+                <FontAwesomeIcon 
+                  icon={faCheck}
+                  className="complete-button"
+                />
+                <FontAwesomeIcon
+                  icon={faTrashCan}
+                  className="delete-button"
+                  onClick={() => handleDelete(task.id)}
+                />
+              </div>
             </li>
 
             {/* {showEdit === item.id ? (

@@ -4,50 +4,34 @@ import { faCheck, faEdit, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import DropdownMenu from "./DropdownMenu";
 
 const TaskList = ({ tasks, setTasks }) => {
-  // const [showEdit, setShowEdit] = useState(-1);
-  // const [updatedText, setUpdatedText] = useState("");
+  const [complete, setComplete] = useState(false);
 
-  // for deleting items from list
   const handleDelete = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  // for editing items in the list
-  // const editItem = (id, newText) => {
-  //   if (!newText) {
-  //     return handleError();
-  //   };
-
-  //   const currentItem = items.filter((item) => item.id === id);
-
-  //   const newItem = {
-  //     id: currentItem.id,
-  //     value: newText,
-  //   };
-
-  //   deleteItem(id);
-
-  //   setItems((oldList) => [newItem, ...oldList]);
-  //   setUpdatedText("");
-  //   setShowEdit();
-  // }
-
+  const handleComplete = () => {
+    setComplete(!complete);
+  };
+  
   return (
     <div className="task-list">
       {tasks.map((task) => {
         return (
           <div className="task">
             <li key={task.id}>
-              {task.value}
+              <div className={complete ? "completed-task" : ""}>{task.value}</div>
               {/* <DropdownMenu /> */}
               <div className="task-buttons">
                 <FontAwesomeIcon
                   icon={faEdit}
-                  className="edit-button" 
+                  className="edit-button"
+                  // onClick={() => handleEdit(task)} 
                 />
                 <FontAwesomeIcon 
                   icon={faCheck}
                   className="complete-button"
+                  onClick={() => handleComplete(task.id)}
                 />
                 <FontAwesomeIcon
                   icon={faTrashCan}

@@ -76,6 +76,10 @@
   justify-content: space-between;
 }
 
+.completed-task {
+  text-decoration: line-through;
+}
+
 .task-buttons {
   display: flex;
   align-items: center;

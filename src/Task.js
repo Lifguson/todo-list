@@ -10,12 +10,15 @@ const Task = ({ task, taskList, setTaskList }) => {
     const handleComplete = (id) => {
         setTaskList(taskList.map((task) => {
             if (task.id === id) {
-                return { ...task, completed: true };
+                return { ...task, completed: !task.completed };
             } else {
                 return task;
             }
         }))
     };
+
+    
+
 
   return (
     <div

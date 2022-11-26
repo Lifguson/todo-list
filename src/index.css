@@ -65,8 +65,7 @@
 }
 
 .task-list li:hover {
-  color: gray;
-  border-color: gray;
+  opacity: 75%;
   transition-duration: .2s;
 }
 

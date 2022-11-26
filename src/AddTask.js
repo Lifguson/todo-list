@@ -1,28 +1,28 @@
 import { useState } from "react";
 
-const AddTask = ({ tasks, setTasks }) => {
-  const [text, setText] = useState("");
+const AddTask = ({ taskList, setTaskList }) => {
+  const [newTask, setNewTask] = useState("");
   const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!text) {
+    if (!newTask) {
       return handleError();
     } else {
 
     const task = {
       id: Math.floor(Math.random() * 1000),
-      value: text,
+      taskName: newTask,
       complete: false
     };
 
-    setTasks([task, ...tasks]);
-    setText("");
+    setTaskList([task, ...taskList]);
+    setNewTask("");
   }};
 
   const handleError = () => {
-    if (!text) {
+    if (!newTask) {
       setError(true);
       setTimeout(() => {
         setError(false);
@@ -35,9 +35,9 @@ const AddTask = ({ tasks, setTasks }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value={text}
+          value={newTask}
           placeholder="What needs to be done?"
-          onChange={(e) => setText(e.target.value)}
+          onChange={(e) => setNewTask(e.target.value)}
         />
 
         <button className="add-button" onClick={() => handleSubmit()}>

@@ -1,11 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faEdit, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
-const Task = ({ task, handleDelete, completed, handleComplete }) => {
+const Task = ({ task, taskList, setTaskList }) => {
+
+    const handleDelete = (id) => {
+        setTaskList(taskList.filter((task) => task.id !== id));
+      };
+
   return (
     <div
       className="task"
-      style={{ backgroundColor: completed ? "green" : "black" }}
     >
       <li key={task.id}>
         {task.taskName}
@@ -17,7 +21,6 @@ const Task = ({ task, handleDelete, completed, handleComplete }) => {
           <FontAwesomeIcon
             icon={faCheck}
             className="complete-button"
-            onClick={() => handleComplete(task.id)}
           />
           <FontAwesomeIcon
             icon={faTrashCan}

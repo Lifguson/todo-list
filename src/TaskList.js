@@ -9,7 +9,7 @@ const TaskList = ({ taskList, setTaskList }) => {
           <Task
             task={task}
             key={task.id}
-            newTask={task.value}
+            text={task.text}
             setTaskList={setTaskList}
             taskList={taskList}
           />

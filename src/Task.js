@@ -10,7 +10,7 @@ const Task = ({ task, taskList, setTaskList }) => {
     const handleComplete = (id) => {
         setTaskList(taskList.map((task) => {
             if (task.id === id) {
-                return { ...task, completed: !task.completed };
+                return { ...task, complete: !task.complete };
             } else {
                 return task;
             }
@@ -23,11 +23,12 @@ const Task = ({ task, taskList, setTaskList }) => {
   return (
     <div
       className="task"
+      style={{ borderColor: task.complete ? "green" : "white", color: task.complete ? "green" : "white", textDecoration: task.complete ? "line-through" : "none"  }}
     >
-      <li key={task.id}
-      style={{ borderColor: task.completed ? "green" : "white", color: task.completed ? "green" : "white", textDecoration: task.completed ? "line-through" : "none"  }}
-      >
-        {task.taskName}
+      <input key={task.id} value={task.text} type="text"
+      style={{ color: task.complete ? "green" : "white" }}
+      />
+        
         <div className="task-buttons">
           <FontAwesomeIcon
             icon={faEdit}
@@ -44,7 +45,6 @@ const Task = ({ task, taskList, setTaskList }) => {
             onClick={() => handleDelete(task.id)}
           />
         </div>
-      </li>
     </div>
   );
 };

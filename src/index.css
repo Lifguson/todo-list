@@ -49,7 +49,24 @@
   width: 50vh;
 }
 
-.task-list li {
+.task input {
+  border-style: none;
+  height: 25px;
+  width: 36vh;
+}
+
+.task input:active {
+  background-color: black;
+  border-color: black;
+  color: black;
+}
+
+.task-list li:hover {
+  opacity: 75%;
+  transition-duration: .2s;
+}
+
+.task {
   margin-top: 15px;
   height: 25px;
   display: flex;
@@ -61,22 +78,6 @@
   padding: 5px;
   color: white;
   width: 50vh;
-  /* border: solid 2px red; */
-}
-
-.task-list li:hover {
-  opacity: 75%;
-  transition-duration: .2s;
-}
-
-.task {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.completed-task {
-  text-decoration: line-through;
 }
 
 .task-buttons {
@@ -144,4 +145,8 @@
 .complete-button:hover {
   color: green;
   transition-duration: .2s;
+}
+
+.complete-button:active {
+  color: green;
 }

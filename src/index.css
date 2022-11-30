@@ -55,13 +55,11 @@
   width: 36vh;
 }
 
-.task input:active {
-  background-color: black;
-  border-color: black;
-  color: black;
+.task input:focus {
+  outline: none;
 }
 
-.task-list li:hover {
+.task:hover {
   opacity: 75%;
   transition-duration: .2s;
 }

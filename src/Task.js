@@ -17,17 +17,17 @@ const Task = ({ task, taskList, setTaskList }) => {
         }))
     };
 
-    
-
-
   return (
     <div
       className="task"
       style={{ borderColor: task.complete ? "green" : "white", color: task.complete ? "green" : "white", textDecoration: task.complete ? "line-through" : "none"  }}
     >
-      <input key={task.id} value={task.text} type="text"
+      <div key={task.id} value={task.text} type="text"
       style={{ color: task.complete ? "green" : "white" }}
-      />
+      contentEditable="true"
+      >
+        {task.text}
+        </div>
         
         <div className="task-buttons">
           <FontAwesomeIcon

@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Task from "./Task";
 
 const TaskList = ({ taskList, setTaskList }) => {
   
+
   return (
     <div className="task-list">
       {taskList.map((task) => {
@@ -12,6 +14,7 @@ const TaskList = ({ taskList, setTaskList }) => {
             text={task.text}
             setTaskList={setTaskList}
             taskList={taskList}
+            
           />
         );
       })}

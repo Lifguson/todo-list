@@ -55,7 +55,7 @@
   width: 36vh;
 }
 
-.task input:focus {
+.task div:focus {
   outline: none;
 }
 

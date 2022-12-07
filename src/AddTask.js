@@ -1,34 +1,7 @@
-import { useState } from "react";
+const AddTask = ({ handleSubmit, text, setText, error }) => {
+  
 
-const AddTask = ({ taskList, setTaskList }) => {
-  const [text, setText] = useState("");
-  const [error, setError] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!text) {
-      return handleError();
-    } else {
-
-    const task = {
-      id: Math.floor(Math.random() * 1000),
-      text,
-      complete: false
-    };
-
-    setTaskList([...taskList, task]);
-    setText("");
-  }};
-
-  const handleError = () => {
-    if (!text) {
-      setError(true);
-      setTimeout(() => {
-        setError(false);
-      }, 2000);
-    }
-  };
+  
 
   return (
     <div className="input">

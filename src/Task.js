@@ -1,7 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faEdit, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
-const Task = ({ task, taskList, setTaskList }) => {
+const Task = ({ task, taskList, setTaskList, updateTask, setText, text }) => {
+
+const [edit, setEdit] = useState({
+  id: null,
+  value: ''
+});
+
+  const handleEdit = (id, value) => {
+    updateTask(edit.id, value);
+    setEdit({
+      id: null,
+      value: ''
+    });
+  };
 
     const handleDelete = (id) => {
         setTaskList(taskList.filter((task) => task.id !== id));
@@ -22,11 +36,13 @@ const Task = ({ task, taskList, setTaskList }) => {
       className="task"
       style={{ borderColor: task.complete ? "green" : "white", color: task.complete ? "green" : "white", textDecoration: task.complete ? "line-through" : "none"  }}
     >
-      <div key={task.id} value={task.text} type="text"
+      <div key={task.id} value={text} type="text"
       style={{ color: task.complete ? "green" : "white" }}
       contentEditable="true"
+      onInput={handleEdit}
       >
-        {task.text}
+        {text}
+        {console.log(task)}
         </div>
         
         <div className="task-buttons">

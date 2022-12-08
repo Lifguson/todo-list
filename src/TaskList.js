@@ -2,9 +2,8 @@ import { useState } from "react";
 import AddTask from "./AddTask";
 import Task from "./Task";
 
-const TaskList = ({ taskList, setTaskList }) => {
+const TaskList = ({ taskList, setTaskList, enterEditMode, error, setError, isEditing }) => {
   const [text, setText] = useState("");
-  const [error, setError] = useState(false);
   
   const task = {
     id: Math.floor(Math.random() * 1000),
@@ -59,6 +58,8 @@ const TaskList = ({ taskList, setTaskList }) => {
             taskList={taskList}
             updateTask={updateTask}
             setText={setText}
+            enterEditMode={enterEditMode}
+            isEditing={isEditing}
           />
         );
       })}

@@ -2,14 +2,22 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faEdit, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-const Task = ({ task, taskList, setTaskList, updateTask, setText, text }) => {
+const Task = ({ task, taskList, setTaskList, setText, text }) => {
 
 const [edit, setEdit] = useState({
   id: null,
   value: ''
 });
+  
+  const updateTask = (taskId, newValue) => {
+    if (!newValue.text) {
+      return;
+    } else {
+      setTaskList(prev => prev.map(item => (item.id === taskId ? newValue : item)))
+    }
+  };
 
-  const handleEdit = (id, value) => {
+  const handleEdit = (value) => {
     updateTask(edit.id, value);
     setEdit({
       id: null,
@@ -36,14 +44,13 @@ const [edit, setEdit] = useState({
       className="task"
       style={{ borderColor: task.complete ? "green" : "white", color: task.complete ? "green" : "white", textDecoration: task.complete ? "line-through" : "none"  }}
     >
-      <div key={task.id} value={text} type="text"
+      <li key={task.id} value={task.text} type="text"
       style={{ color: task.complete ? "green" : "white" }}
-      contentEditable="true"
       onInput={handleEdit}
       >
-        {text}
+        {task.text}
         {console.log(task)}
-        </div>
+        </li>
         
         <div className="task-buttons">
           <FontAwesomeIcon

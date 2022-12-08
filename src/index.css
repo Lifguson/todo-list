@@ -78,6 +78,10 @@
   width: 50vh;
 }
 
+.task li {
+  list-style: none;
+}
+
 .task-buttons {
   display: flex;
   align-items: center;

@@ -37,7 +37,7 @@ const EditTask = ({ editedTask, updateTask, closeEditMode, error }) => {
             required
             autoFocus
           />
-          <button className="add-button"
+          <button className="update-button"
             type="submit"
             aria-label={`confirm edited task to now read ${updatedTaskName}`}
           >

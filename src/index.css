@@ -153,6 +153,21 @@
   color: green;
 }
 
+.edit-input {
+  width: 25vh;
+  /* border: solid 2px red; */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.edit-input form {
+  display: flex;
+  align-items: center;
+}
+
 .edit-input input {
   height: 32.5px;
   width: 25vh;
@@ -162,4 +177,32 @@
   outline: white;
   text-align: center;
   display: flex;
+}
+
+.update-button {
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style:none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  height: 35px;
+  width: 66px;
+  padding: 0 10px;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.update-button:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 1px 1px 20px;
+  transition-duration: .2s;
+}
+
+.update-button:active {
+  transform: translateY(2px);
+  transition-duration: .4s;
 }

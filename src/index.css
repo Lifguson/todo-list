@@ -168,7 +168,7 @@
 }
 
 .edit-input {
-  height: 25vh;
+  height: 12.5vh;
   width: 25vh;
   /* border: solid 2px red; */
   display: flex;
@@ -181,7 +181,6 @@
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
-  margin-top: 100px;
   border: solid 2px orange;
   border-radius: 8px;
 }

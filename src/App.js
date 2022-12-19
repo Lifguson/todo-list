@@ -10,6 +10,7 @@ const App = () => {
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(null);
+  const [showModal, setShowModal] = useState(true);
 
 
   const updateTask = (task) => {
@@ -35,7 +36,9 @@ const App = () => {
   return (
 
 
-      <div className="content">
+      <div className="content"
+        // styles={{ filter: isEditing ? "blur(8px)" : "none", webkitFilter: "blur(8px)" }}
+      >
         {
           isEditing && (
             <EditTask 
@@ -43,6 +46,8 @@ const App = () => {
               updateTask={updateTask}
               closeEditMode={closeEditMode}
               error={error}
+              showModal={showModal}
+              setShowModal={setShowModal}
             />
           )
         }

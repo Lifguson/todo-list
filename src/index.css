@@ -120,7 +120,7 @@
 }
 
 .delete-button:hover {
-  color: #673FD7;
+  color: red;
   transition-duration: .2s;
 }
 
@@ -153,19 +153,37 @@
   color: green;
 }
 
+.backdrop {
+  backdrop-filter: blur(1px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .edit-input {
+  height: 25vh;
   width: 25vh;
   /* border: solid 2px red; */
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   justify-content: center;
-  margin-top: 25px;
 }
 
 .edit-input form {
   display: flex;
   align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 100px;
+  border: solid 2px orange;
+  border-radius: 8px;
 }
 
 .edit-input input {

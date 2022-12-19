@@ -1,6 +1,7 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const EditTask = ({ editedTask, updateTask, closeEditMode, error }) => {
+const EditTask = ({ editedTask, updateTask, closeEditMode, error, showModal, setShowModal }) => {
     const [updatedTaskName, setUpdatedTaskName] = useState(editedTask.text);
 
     useEffect(() => {
@@ -20,40 +21,69 @@ const EditTask = ({ editedTask, updateTask, closeEditMode, error }) => {
         updateTask({...editedTask, text: updatedTaskName})
     }
 
+    const backdropVariants = {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+    };
+    
+    const modalVariants = {
+        initial: {
+            y: "-100vh",
+            opacity: 0,
+        },
+        animate: {
+            y: "200px",
+            opacity: 1,
+            transition: { delay: 0.2 }
+        }
+    }
 
     return (
-    <div className="edit-input"
-        role="dialog"
-        aria-labelledby="editTask"
-        onClick={(e) => {e.target === e.currentTarget && closeEditMode()}}
-    >
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            id="editTask"
-            value={updatedTaskName}
-            placeholder="Edit task"
-            onInput={(e) => setUpdatedTaskName(e.target.value)}
-            required
-            autoFocus
-          />
-          <button className="update-button"
-            type="submit"
-            aria-label={`confirm edited task to now read ${updatedTaskName}`}
-          >
-            Update
-          </button>
-          <p
-            style={{
-              display: !error ? "none" : "",
-              color: "red",
-            }}
-          >
-            Please add a task
-          </p>
-        </form>
-      </div>
-
+    <AnimatePresence>
+      { showModal && (
+        <motion.div
+        className="backdrop"
+        variants={backdropVariants}
+        initial="initial"
+        animate="animate"
+        exit="initial"
+      >
+        <motion.div className="edit-input"
+            role="dialog"
+            aria-labelledby="editTask"
+            onClick={(e) => {e.target === e.currentTarget && closeEditMode()}}
+            variants={modalVariants}
+        >
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                id="editTask"
+                value={updatedTaskName}
+                placeholder="Edit task"
+                onInput={(e) => setUpdatedTaskName(e.target.value)}
+                required
+                autoFocus
+              />
+              <button className="update-button"
+                type="submit"
+                aria-label={`confirm edited task to now read ${updatedTaskName}`}
+              >
+                Update
+              </button>
+              <p
+                style={{
+                  display: !error ? "none" : "",
+                  color: "red",
+                }}
+              >
+                Please add a task
+              </p>
+            </form>
+          </motion.div>
+        </motion.div>
+      )}
+    
+      </AnimatePresence>
     )
 }
 

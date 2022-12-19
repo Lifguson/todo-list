@@ -17,6 +17,11 @@ const Task = ({ task, taskList, setTaskList, setText, text, enterEditMode, isEdi
         }))
     };
 
+    const borderColors = {
+      complete:"green",
+      editing: "orange"
+    }
+
   return (
     <div
       className="task"

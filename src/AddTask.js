@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const AddTask = ({ handleSubmit, text, setText, error }) => {
   
 
@@ -13,9 +15,12 @@ const AddTask = ({ handleSubmit, text, setText, error }) => {
           onChange={(e) => setText(e.target.value)}
         />
 
-        <button className="add-button" >
+        <motion.button className="add-button" 
+          style={{ backgroundColor: "transparent" }}
+          whileHover={{ scale: 1.1 }} 
+        >
           Add
-        </button>
+        </motion.button>
         <p
           style={{
             display: !error ? "none" : "",

@@ -73,7 +73,7 @@
   justify-content: space-between;
   border: solid 1px white;
   border-radius: 8px;
-  padding: 5px;
+  padding: 6px;
   color: white;
   width: 50vh;
 }
@@ -113,8 +113,6 @@
 }
 
 .delete-button {
-  /* height: 25px; */
-  /* border-radius: 100px; */
   padding: 4px;
   margin: 5px;
 }

@@ -2,13 +2,20 @@ import { useState } from "react";
 import AddTask from "./AddTask";
 import Task from "./Task";
 
-const TaskList = ({ taskList, setTaskList, enterEditMode, error, setError, isEditing }) => {
+const TaskList = ({
+  taskList,
+  setTaskList,
+  enterEditMode,
+  error,
+  setError,
+  isEditing,
+}) => {
   const [text, setText] = useState("");
-  
+
   const task = {
     id: Math.floor(Math.random() * 1000),
     text,
-    complete: false
+    complete: false,
   };
 
   const handleSubmit = (e) => {
@@ -17,20 +24,18 @@ const TaskList = ({ taskList, setTaskList, enterEditMode, error, setError, isEdi
     if (!text) {
       return handleError();
     } else {
-
-    
-
-    setTaskList([...taskList, task]);
-    setText("");
-  }};
+      setTaskList([...taskList, task]);
+      setText("");
+    }
+  };
 
   const updateTask = (taskId, newValue) => {
     if (!newValue) {
       return handleError();
     } else {
-      setTaskList([...taskList, { ...task, text: newValue }])
+      setTaskList([...taskList, { ...task, text: newValue }]);
     }
-  }
+  };
 
   const handleError = () => {
     if (!text) {
@@ -41,29 +46,31 @@ const TaskList = ({ taskList, setTaskList, enterEditMode, error, setError, isEdi
     }
   };
 
-
-
-
   return (
     <>
-    <AddTask text={text} setText={setText} error={error} handleSubmit={handleSubmit} />
-    <div className="task-list">
-      {taskList.map((task) => {
-        return (
-          <Task
-            task={task}
-            key={task.id}
-            text={task.text}
-            setTaskList={setTaskList}
-            taskList={taskList}
-            updateTask={updateTask}
-            setText={setText}
-            enterEditMode={enterEditMode}
-            isEditing={isEditing}
-          />
-        );
-      })}
-    </div>
+      <AddTask
+        text={text}
+        setText={setText}
+        error={error}
+        handleSubmit={handleSubmit}
+      />
+      <div className="task-list">
+        {taskList.map((task) => {
+          return (
+            <Task
+              task={task}
+              key={task.id}
+              text={task.text}
+              setTaskList={setTaskList}
+              taskList={taskList}
+              updateTask={updateTask}
+              setText={setText}
+              enterEditMode={enterEditMode}
+              isEditing={isEditing}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };

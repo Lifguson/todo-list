@@ -27,11 +27,6 @@ const Task = ({
     );
   };
 
-  const borderColors = {
-    complete: "green",
-    editing: "orange",
-  };
-
   return (
     <div
       className="task"

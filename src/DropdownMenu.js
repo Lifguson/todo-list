@@ -10,10 +10,8 @@
 //         setOpen(!open);
 //     }
 
-
-
 //   return (
-    
+
 //     <div className="dropdown-container">
 //         <button onClick={handleOpen}><FontAwesomeIcon icon={faTag} className="dropdown-icon" /></button>
 //         {open ? (
@@ -23,7 +21,7 @@
 //                 <li className="dropdown-item">Low priority</li>
 //             </ul>
 //         ) : null}
-     
+
 //     </div>
 //   );
 // };

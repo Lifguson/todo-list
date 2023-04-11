@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 
 const AddTask = ({ handleSubmit, text, setText, error }) => {
-  
-
-  
-
   return (
     <div className="input">
       <form onSubmit={handleSubmit}>
@@ -15,9 +11,10 @@ const AddTask = ({ handleSubmit, text, setText, error }) => {
           onChange={(e) => setText(e.target.value)}
         />
 
-        <motion.button className="add-button" 
+        <motion.button
+          className="add-button"
           style={{ backgroundColor: "transparent" }}
-          whileHover={{ scale: 1.1 }} 
+          whileHover={{ scale: 1.1 }}
         >
           Add
         </motion.button>

@@ -1,6 +1,7 @@
-*{
+* {
   background-color: black;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .content {
@@ -61,7 +62,7 @@
 
 .task:hover {
   opacity: 75%;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .task {
@@ -88,10 +89,15 @@
 }
 
 .add-button {
-  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  background-image: linear-gradient(
+    92.88deg,
+    #455eb5 9.16%,
+    #5643cc 43.89%,
+    #673fd7 64.72%
+  );
   border-radius: 8px;
-  border-style:none;
-  color: #FFFFFF;
+  border-style: none;
+  color: #ffffff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
@@ -104,12 +110,12 @@
 
 .add-button:hover {
   box-shadow: rgba(80, 63, 205, 0.5) 1px 1px 20px;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .add-button:active {
   transform: translateY(2px);
-  transition-duration: .4s;
+  transition-duration: 0.4s;
 }
 
 .delete-button {
@@ -119,12 +125,12 @@
 
 .delete-button:hover {
   color: red;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
-.delete-button:active{
+.delete-button:active {
   transform: translateY(2px);
-  transition-duration: .4s;
+  transition-duration: 0.4s;
 }
 
 .edit-button {
@@ -134,7 +140,7 @@
 
 .edit-button:hover {
   color: orange;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .complete-button {
@@ -144,7 +150,7 @@
 
 .complete-button:hover {
   color: green;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .complete-button:active {
@@ -179,7 +185,7 @@
   align-items: center;
   padding-left: 50px;
   padding-right: 50px;
-  border: solid 2px orange;
+  border: solid 2px grey;
   border-radius: 8px;
 }
 
@@ -195,10 +201,15 @@
 }
 
 .update-button {
-  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  background-image: linear-gradient(
+    92.88deg,
+    #455eb5 9.16%,
+    #5643cc 43.89%,
+    #673fd7 64.72%
+  );
   border-radius: 8px;
-  border-style:none;
-  color: #FFFFFF;
+  border-style: none;
+  color: #ffffff;
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
@@ -214,10 +225,10 @@
 
 .update-button:hover {
   box-shadow: rgba(80, 63, 205, 0.5) 1px 1px 20px;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .update-button:active {
   transform: translateY(2px);
-  transition-duration: .4s;
+  transition-duration: 0.4s;
 }

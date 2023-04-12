@@ -1,8 +1,16 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import TaskList from "./TaskList";
 import { useState } from "react";
 import EditTask from "./EditTask";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Navbar from "./components/Navbar";
 
 const App = () => {
+  const { user } = useAuthContext();
+
   const [taskList, setTaskList] = useState([]);
   const [error, setError] = useState(false);
   const [previousFocusEl, setPreviousFocusEl] = useState(null);
